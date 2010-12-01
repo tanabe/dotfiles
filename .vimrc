@@ -83,6 +83,6 @@ hi PmenuSbar guibg=#333333
 
 "closetag
 let g:closetag_html_style=1
-au Filetype html,xml,xsl,ant source $HOME/.vim/macros/closetag.vim
+au Filetype html,xml,xsl,ant source $HOME/.vim/bundle/closetag/plugin/closetag.vim
 
 
