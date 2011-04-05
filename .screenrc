@@ -1,0 +1,14 @@
+shell -$SHELL
+term xterm-256color
+#defbce on
+autodetach on
+bell_msg "^G"
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+defscrollback 10000
+startup_message off
+vbell off
+escape ^Jj
+#caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+caption always "%?%F%{= wk}%:%{= ww}%?%-w%{=u Wk}%n %t%{-}%+w"
