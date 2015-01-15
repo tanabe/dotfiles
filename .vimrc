@@ -38,8 +38,8 @@ set laststatus=2
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set smartcase
 set textmode
 set virtualedit+=block
@@ -55,39 +55,17 @@ nnoremap gk k
 nnoremap ; :
 nmap <silent> <C-n> :noh<CR>
 
-
-au BufRead *.html,*.css*.js call AutoSetIndentStyle()
-au BufRead,BufNewFile *.html call LoadHTMLTemplate()
-
 "backup
 se backupdir=/tmp
 se directory=/tmp
 
-"vimrc編集
+"edit vimrc
 nnoremap <Space>. :<C-u>edit $MYVIMRC<Enter>
 nnoremap <Space>s. :<C-u>source $MYVIMRC<Enter>
 
 "auto complete
 set complete+=k
 
-"dict
-autocmd FileType javascript :set dictionary=$HOME/.vim/dict/javascript.dict
-autocmd FileType php :set dictionary=$HOME/.vim/dict/php.dict
-
-"file type
-au FileType javascript nnoremap <buffer> <C-c>  :<C-u>call ASCommentWriter()<CR>
-
-
-"plugin
-"acp
-"let g:acp_completeOption = '.,w,b,u,t,i,k'
-"hi Pmenu ctermbg=4
-"hi PmenuSel ctermbg=1
-"hi PMenuSbar ctermbg=4
-
-"closetag
-"let g:closetag_html_style=1
-"au Filetype html,xml,xsl,ant source $HOME/.vim/macros/closetag.vim
 
 "neocomplcache
 " Disable AutoComplPop.
@@ -123,9 +101,6 @@ smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
@@ -152,53 +127,33 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
+
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 "let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 
 "function
 
-"template
-function! LoadHTMLTemplate()
-  if (line("$") == 1) && (match(getline(1), "^$") == 0)
-    se fenc=utf-8
-    "Windows
-    0r $HOME/.vim/templates/template.html
-  endif
-endfun
-
 "escape
-function! EscapeHTMLSpecialChars() range
-  let n = a:firstline
-  while n <= a:lastline
-    let target = getline(n)
-    let target = substitute(target, "\&", "\\&amp;", "g")
-    let target = substitute(target, "<", "\\&lt;", "g")
-    let target = substitute(target, ">", "\\&gt;", "g")
-    call setline(n, target)
-    let n = n + 1
-  endwhile
-endfunction
+" function! EscapeHTMLSpecialChars() range
+"   let n = a:firstline
+"   while n <= a:lastline
+"     let target = getline(n)
+"     let target = substitute(target, "\&", "\\&amp;", "g")
+"     let target = substitute(target, "<", "\\&lt;", "g")
+"     let target = substitute(target, ">", "\\&gt;", "g")
+"     call setline(n, target)
+"     let n = n + 1
+"   endwhile
+" endfunction
 
-"comment
-function! ASCommentWriter()
-  let c = col(".")
-  let l = a:firstline - 1
-  let s = ''
-  while len(s) < (c - 1)
-    let s = s . " "
-  endwhile
-  call append(l, s . ' */')
-  call append(l, s . ' *')
-  call append(l, s . '/**')
-endfunction
+"dict
+" autocmd FileType javascript :set dictionary=$HOME/.vim/dict/javascript.dict
+" autocmd FileType php :set dictionary=$HOME/.vim/dict/php.dict
 
-"ポップアップメニューのカラーを設定
+"popup color
 hi Pmenu ctermbg=0
 hi PmenuSel ctermbg=4
 hi PmenuSbar ctermbg=2
 hi PmenuThumb ctermbg=3
-
-
-
 
