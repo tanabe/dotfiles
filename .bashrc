@@ -9,6 +9,7 @@ fi
 
 PS1="[\u@\h \w]\$ "
 
+alias tig='tig status'
 alias ll='ls -l -a'
 
 function share_history {
