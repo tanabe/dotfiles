@@ -48,13 +48,17 @@ inoremap <C-e> <End>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
-"backup
+" backup
 
 set backupdir=/tmp
 set directory=/tmp
 set noswapfile
 
-"plugin
+" plugin
+
+" setup
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
+" launch vim and run :PluginInstall
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -67,6 +71,6 @@ Plugin 'pbogut/fzf-mru.vim'
 call vundle#end()
 filetype plugin indent on
 
-"plugin settings
+" plugin settings
 
 nnoremap q :FZFMru<cr>
