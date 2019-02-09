@@ -57,7 +57,7 @@ set noswapfile
 " plugin
 
 " setup
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " launch vim and run :PluginInstall
 
 set rtp+=~/.vim/bundle/Vundle.vim
