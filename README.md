@@ -1,1 +1,3 @@
-bash dotfiles/setup.sh
+    $ brew install coreutils
+    $ bash dotfiles/setup.sh
+

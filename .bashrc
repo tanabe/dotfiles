@@ -10,7 +10,7 @@ fi
 PS1="[\u@\h \w]\$ "
 
 alias tig='tig status'
-alias ll='ls -l -a'
+alias ll='gls -l -a --color=auto'
 
 function share_history {
     history -a
@@ -24,3 +24,4 @@ export HISTSIZE=9999
 stty stop undef
 
 export SVN_EDITOR=vim
+
