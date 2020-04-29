@@ -7,6 +7,8 @@ fi
 
 # User specific aliases and functions
 
+source ~/.git-completion.bash
+
 PS1="[\u@\h \w]\$ "
 
 alias tig='tig status'
@@ -25,3 +27,6 @@ stty stop undef
 
 export SVN_EDITOR=vim
 
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
