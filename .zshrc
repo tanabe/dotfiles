@@ -1,10 +1,18 @@
 #
+# UI
+#
+
+PROMPT='%F{1}%~%f $ '
+
+#
 # environment
 #
 
-export LANG="ja_JP.UTF-8"
+export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
 #
 # alias
