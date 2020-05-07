@@ -33,8 +33,15 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 #
 
 HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt share_history
+setopt append_history
+setopt inc_append_history
+setopt hist_no_store
+setopt hist_reduce_blanks
 
 #
 # rbenv
@@ -49,7 +56,7 @@ eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 
 #
-# plugins 
+# plugins
 # install with homebrew
 #
 
@@ -66,3 +73,13 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc';
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc';
+fi
