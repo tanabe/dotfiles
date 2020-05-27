@@ -15,12 +15,17 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
 #
-# alias
+# aliases
 #
 
 alias tig='tig status'
 alias ll='gls -l -a --color=auto'
 alias now='date +%Y%m%d%H%M%S'
+alias code="open -a /Applications/Visual\ Studio\ Code.app"
+
+alias -s md=code
+alias -s json=code
+alias -s {cs,ts,html}=code
 
 #
 # completion system
