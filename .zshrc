@@ -25,7 +25,8 @@ alias code="open -a /Applications/Visual\ Studio\ Code.app"
 
 alias -s md=code
 alias -s json=code
-alias -s {cs,ts,html}=code
+alias -s {js,cs,ts,html}=code
+alias -s py=code
 
 #
 # completion system
