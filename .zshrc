@@ -13,6 +13,7 @@ export TERM="xterm-256color"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 #
 # aliases
