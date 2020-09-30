@@ -15,6 +15,9 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH="/usr/local/sbin:$PATH"
 
+# brew install ant
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
 #
 # aliases
 #
