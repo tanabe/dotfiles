@@ -46,13 +46,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt hist_ignore_all_dups
-setopt hist_ignore_dups
-setopt share_history
-setopt append_history
-setopt inc_append_history
-setopt hist_no_store
-setopt hist_reduce_blanks
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
 
 #
 # rbenv
