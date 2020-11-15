@@ -1,8 +1,9 @@
 #
-# UI
+# git status
 #
-
-PROMPT='%F{1}%~%f $ '
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' formats 'on branch %b'
+setopt PROMPT_SUBST
 
 #
 # environment
@@ -98,3 +99,22 @@ fi
 # zsh autojump
 # https://github.com/wting/autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+#
+# PROMPT
+#
+
+PROMPT='%F{1}%~%f $ '
+
+#
+# hook
+#
+function precmd_hook() {
+    vcs_info
+    # right prompt
+    RPROMPT="${vcs_info_msg_0_}"
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd precmd_hook
+
+
