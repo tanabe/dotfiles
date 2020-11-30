@@ -1,9 +1,9 @@
 #
 # git status
 #
-autoload -Uz vcs_info
-zstyle ':vcs_info:git:*' formats 'on branch %b'
-setopt PROMPT_SUBST
+#autoload -Uz vcs_info
+#zstyle ':vcs_info:git:*' formats 'on branch %b'
+#setopt PROMPT_SUBST
 
 #
 # environment
@@ -109,12 +109,12 @@ PROMPT='%F{1}%~%f $ '
 #
 # hook
 #
-function precmd_hook() {
-    vcs_info
-    # right prompt
-    RPROMPT="${vcs_info_msg_0_}"
-}
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd precmd_hook
+#function precmd_hook() {
+#    vcs_info
+#    # right prompt
+#    RPROMPT="${vcs_info_msg_0_}"
+#}
+#autoload -Uz add-zsh-hook
+#add-zsh-hook precmd precmd_hook
 
 
