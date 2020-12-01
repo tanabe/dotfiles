@@ -1,11 +1,4 @@
 #
-# git status
-#
-#autoload -Uz vcs_info
-#zstyle ':vcs_info:git:*' formats 'on branch %b'
-#setopt PROMPT_SUBST
-
-#
 # environment
 #
 
@@ -107,14 +100,26 @@ fi
 PROMPT='%F{1}%~%f $ '
 
 #
-# hook
+# powerline
+# see: https://github.com/b-ryan/powerline-shell
+# how to setup
+# $ brew tap sanemat/font
+# $ brew install ricty --with-powerline
 #
-#function precmd_hook() {
-#    vcs_info
-#    # right prompt
-#    RPROMPT="${vcs_info_msg_0_}"
-#}
-#autoload -Uz add-zsh-hook
-#add-zsh-hook precmd precmd_hook
 
+function powerline_precmd() {
+    PS1="$(powerline-shell --shell zsh $?)"
+}
 
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
