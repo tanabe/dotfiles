@@ -49,16 +49,21 @@ setopt HIST_NO_STORE
 setopt HIST_REDUCE_BLANKS
 
 #
-# rbenv
+# Ruby
 #
 
 eval "$(rbenv init -)"
 
 #
-# pyenv
+# Python
 #
 
 eval "$(pyenv init -)"
+
+#
+# Go
+#
+export GOPATH=$HOME/go
 
 #
 # plugins
