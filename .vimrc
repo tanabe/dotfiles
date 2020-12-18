@@ -67,6 +67,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'pbogut/fzf-mru.vim'
+Plugin 'qpkorr/vim-renamer'
 
 call vundle#end()
 filetype plugin indent on
