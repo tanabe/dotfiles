@@ -21,6 +21,7 @@ alias ll='gls -l -a --color=auto'
 alias now='date +%Y%m%d%H%M%S'
 alias code="open -a /Applications/Visual\ Studio\ Code.app"
 alias agl='ag --pager="less -R"'
+alias rg='rg -i'
 
 alias -s md=code
 alias -s json=code
@@ -128,3 +129,17 @@ function install_powerline_precmd() {
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
+
+#
+# ignore append history
+#
+
+unction zshaddhistory() {
+  emulate -L zsh
+  if ! [[ "$1" =~ "(^ |pwd|--force)" ]] ; then
+      print -sr -- "${1%%$'\n'}"
+      fc -p
+  else
+      return 1
+  fi
+}
