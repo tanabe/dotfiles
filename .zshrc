@@ -21,6 +21,7 @@ alias now='date +%Y%m%d%H%M%S'
 alias code="open -a /Applications/Visual\ Studio\ Code.app"
 alias agl='ag --pager="less -R"'
 alias rg='rg -i'
+alias history='history -E 1'
 
 alias -s md=code
 alias -s json=code
@@ -50,12 +51,14 @@ setopt HIST_REDUCE_BLANKS
 
 #
 # Ruby
+# https://github.com/rbenv/rbenv
 #
 
 eval "$(rbenv init -)"
 
 #
 # Python
+# https://github.com/pyenv/pyenv
 #
 
 eval "$(pyenv init -)"
@@ -64,6 +67,12 @@ eval "$(pyenv init -)"
 # Go
 #
 export GOPATH=$HOME/go
+
+#
+# Node.js
+# https://github.com/Schniz/fnm
+#
+eval "$(fnm env --use-on-cd)"
 
 #
 # plugins
