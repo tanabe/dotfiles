@@ -145,7 +145,7 @@ fi
 # ignore append history
 #
 
-unction zshaddhistory() {
+function zshaddhistory() {
   emulate -L zsh
   if ! [[ "$1" =~ "(^ |pwd|--force)" ]] ; then
       print -sr -- "${1%%$'\n'}"
