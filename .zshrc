@@ -22,8 +22,8 @@ alias tig='tig status'
 alias ll='gls -l -a --color=always'
 alias now='date +%Y%m%d%H%M%S'
 alias code="open -a /Applications/Visual\ Studio\ Code.app"
-alias agl='ag --pager="less -R"'
-alias rg='rg -i'
+alias rg='rg -i --color always'
+alias more='more -R'
 alias history='history -E 1'
 
 alias -s md=code
