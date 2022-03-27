@@ -11,12 +11,15 @@ export PATH="/usr/local/sbin:$PATH"
 # brew install ant
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
+# always colored less
+export LESS='-R'
+
 #
 # aliases
 #
 
 alias tig='tig status'
-alias ll='gls -l -a --color=auto'
+alias ll='gls -l -a --color=always'
 alias now='date +%Y%m%d%H%M%S'
 alias code="open -a /Applications/Visual\ Studio\ Code.app"
 alias agl='ag --pager="less -R"'
