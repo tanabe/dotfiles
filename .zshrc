@@ -25,6 +25,7 @@ alias code="open -a /Applications/Visual\ Studio\ Code.app"
 alias rg='rg -i --color always'
 alias more='more -R'
 alias history='history -E 1'
+alias gcb='git checkout $(git branch | sed -r "s/^[ \*]+//" | peco)'
 
 alias -s md=code
 alias -s json=code
