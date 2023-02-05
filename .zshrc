@@ -80,10 +80,10 @@ eval "$(fnm env --use-on-cd)"
 
 #
 # plugins
-# install with homebrew
 #
 
 # zsh-completions
+# brew install zsh-completions
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
@@ -92,9 +92,11 @@ if type brew &>/dev/null; then
 fi
 
 # zsh-autosuggestions
+# brew install zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# zsh-highlighting
+# zsh-syntax-highlighting
+# brew install zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
