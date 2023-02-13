@@ -99,19 +99,9 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # brew install zsh-syntax-highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc';
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc';
-fi
-
 # zsh autojump
 # https://github.com/wting/autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 #
 # PROMPT
@@ -155,3 +145,9 @@ function zshaddhistory() {
       return 1
   fi
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hideaki_tanabe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hideaki_tanabe/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/hideaki_tanabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hideaki_tanabe/google-cloud-sdk/completion.zsh.inc'; fi
