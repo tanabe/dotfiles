@@ -93,11 +93,11 @@ fi
 
 # zsh-autosuggestions
 # brew install zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-syntax-highlighting
 # brew install zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then
@@ -122,10 +122,8 @@ PROMPT='%F{1}%~%f $ '
 #
 # powerline
 # see: https://github.com/b-ryan/powerline-shell
-# how to setup
-# $ brew tap sanemat/font
-# $ brew install ricty --with-powerline
-#
+# https://github.com/b-ryan/powerline-shell#customization
+
 
 function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"
