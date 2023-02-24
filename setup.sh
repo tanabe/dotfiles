@@ -9,5 +9,6 @@ do
     ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
+# Vim
 mv $HOME/.vim $HOME/dotfiles_original/.vim
 ln -s $HOME/dotfiles/.vim $HOME/.vim

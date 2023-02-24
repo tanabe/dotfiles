@@ -9,7 +9,6 @@ set wildmode=list:full
 set hlsearch
 set autochdir
 
-set encoding=japan
 set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp
 set termencoding=utf-8
 set fileencoding=utf-8
