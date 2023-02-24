@@ -30,3 +30,4 @@ export SVN_EDITOR=vim
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+. "$HOME/.cargo/env"

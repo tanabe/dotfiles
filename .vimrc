@@ -17,9 +17,7 @@ set fileencoding=utf-8
 set encoding=utf-8
 
 syntax on
-filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 set number
 set laststatus=2
@@ -55,22 +53,14 @@ set directory=/tmp
 set noswapfile
 
 " plugin
+" https://github.com/junegunn/vim-plug
 
-" setup
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" launch vim and run :PluginInstall
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'pbogut/fzf-mru.vim'
-Plugin 'qpkorr/vim-renamer'
-
-call vundle#end()
-filetype plugin indent on
+call plug#begin()
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'pbogut/fzf-mru.vim'
+Plug 'qpkorr/vim-renamer'
+call plug#end()
 
 " plugin settings
 
