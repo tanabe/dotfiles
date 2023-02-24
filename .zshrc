@@ -26,6 +26,11 @@ alias rg='rg -i --color always'
 alias more='more -R'
 alias history='history -E 1'
 alias gcb='git checkout $(git branch | sed -r "s/^[ \*]+//" | peco)'
+alias vim='nvim'
+
+#
+# These files will be opened with Visual Studio Code
+#
 
 alias -s md=code
 alias -s json=code
