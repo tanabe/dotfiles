@@ -1,5 +1,3 @@
-colorscheme desert256
-
 set nocompatible
 set autoindent
 set smartindent
@@ -43,6 +41,7 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
+inoremap <C-K> <C-O>D
 
 " backup
 
@@ -54,12 +53,20 @@ set noswapfile
 " https://github.com/junegunn/vim-plug
 
 call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
 Plug 'qpkorr/vim-renamer'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'lambdalisue/fern.vim'
 call plug#end()
 
-" plugin settings
+" After installing plugins, You should setup coc.nvim.
+" https://github.com/neoclide/coc.nvim
 
+" plugin settings
 nnoremap q :FZFMru<cr>
+
+" This line should be put after plug setup.
+colorscheme nightfox
