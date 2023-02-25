@@ -17,3 +17,5 @@
 	rebase = false
 [pager]
 	branch = false
+[core]
+	editor = nvim
