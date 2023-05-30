@@ -11,6 +11,7 @@ set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp
 set termencoding=utf-8
 set fileencoding=utf-8
 set encoding=utf-8
+set mouse=
 
 syntax on
 filetype plugin indent on
@@ -70,3 +71,6 @@ nnoremap q :FZFMru<cr>
 
 " This line should be put after plug setup.
 colorscheme nightfox
+
+" keymappings for coc
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
