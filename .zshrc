@@ -7,6 +7,7 @@ export TERM="xterm-256color"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # brew install ant
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -27,6 +28,8 @@ alias more='more -R'
 alias history='history -E 1'
 alias gcb='git checkout $(git branch | sed -r "s/^[ \*]+//" | peco)'
 alias vim='nvim'
+alias vi='nvim'
+alias sandbox='cd ~/sandbox'
 
 #
 # These files will be opened with Visual Studio Code
