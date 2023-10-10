@@ -8,6 +8,7 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # brew install ant
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -30,6 +31,9 @@ alias gcb='git checkout $(git branch | sed -r "s/^[ \*]+//" | peco)'
 alias vim='nvim'
 alias vi='nvim'
 alias sandbox='cd ~/sandbox'
+alias git-push-current-branch='git branch | grep "\*" | awk "{ print \$2 }" | chooser | xargs -I{} git push origin {}'
+alias git-change-branch='git branch --format="%(refname:short)" | chooser --multiple | xargs -I{} git checkout {}'
+alias git-delete-branch='git branch --format="%(refname:short)" | chooser --multiple | xargs -I{} git branch -d {}'
 
 #
 # These files will be opened with Visual Studio Code
