@@ -52,6 +52,7 @@ set noswapfile
 
 " plugin
 " https://github.com/junegunn/vim-plug
+" see installation section
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -61,6 +62,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'qpkorr/vim-renamer'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'lambdalisue/fern.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " After installing plugins, You should setup coc.nvim.
