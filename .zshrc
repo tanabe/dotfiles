@@ -48,7 +48,7 @@ alias -s py=code
 # completion system
 #
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 #
 # history
@@ -59,11 +59,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_DUPS
-setopt SHARE_HISTORY
-setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
 setopt HIST_NO_STORE
 setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
 
 #
 # Ruby
