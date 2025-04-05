@@ -58,12 +58,12 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_DUPS
-setopt HIST_NO_STORE
-setopt HIST_REDUCE_BLANKS
+setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt NO_BANG_HIST
 
 #
 # Ruby
@@ -148,18 +148,23 @@ fi
 # ignore append history
 #
 
-function zshaddhistory() {
-  emulate -L zsh
-  if ! [[ "$1" =~ "(^ |pwd|--force)" ]] ; then
-      print -sr -- "${1%%$'\n'}"
-      fc -p
-  else
-      return 1
-  fi
-}
+#function zshaddhistory() {
+#  emulate -L zsh
+#  if ! [[ "$1" =~ "(^ |pwd|--force)" ]] ; then
+#      print -sr -- "${1%%$'\n'}"
+#      fc -p
+#  else
+#      return 1
+#  fi
+#}
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/hideaki_tanabe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hideaki_tanabe/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/hideaki_tanabe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hideaki_tanabe/google-cloud-sdk/completion.zsh.inc'; fi
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/hideaki_tanabe/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
